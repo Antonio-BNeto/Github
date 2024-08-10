@@ -1,0 +1,2 @@
+adicionando linhas no arquivo.txt
+testando se está funcinando normalmente o commit
