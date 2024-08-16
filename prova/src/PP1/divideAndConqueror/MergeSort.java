@@ -14,7 +14,7 @@ public class MergeSort {
 
     }   
 
-    public void merge(Integer[] array, int leftIndex,int middle, int rightIndex){   
+    private void merge(Integer[] array, int leftIndex,int middle, int rightIndex){   
         Integer[] merge = new Integer[array.length];
 
         for(int i = leftIndex;i<=rightIndex; i++){

@@ -13,7 +13,7 @@ public class QuickSort {
         }
     }
 
-    public int partition(Integer[] array, int leftIndex, int rightIndex){
+    private int partition(Integer[] array, int leftIndex, int rightIndex){
         Integer pivot = array[leftIndex];
         int i = leftIndex;
 

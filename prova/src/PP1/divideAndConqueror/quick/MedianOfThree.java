@@ -15,7 +15,7 @@ public class MedianOfThree {
         }
     }
     
-    public int partition(Integer[] array, int leftIndex, int rightIndex){
+    private int partition(Integer[] array, int leftIndex, int rightIndex){
         Integer pivot = array[leftIndex];
         int i = leftIndex;
 
@@ -31,7 +31,7 @@ public class MedianOfThree {
         return i;
     }
 
-    public void medianOfThree(Integer[] array, int leftIndex, int rightIndex){
+    private void medianOfThree(Integer[] array, int leftIndex, int rightIndex){
         int middle = (leftIndex+rightIndex)/2;
 
         if(array[leftIndex].compareTo(array[rightIndex])>0){
