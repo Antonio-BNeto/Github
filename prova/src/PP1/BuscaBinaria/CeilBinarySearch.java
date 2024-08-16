@@ -15,6 +15,7 @@ public class CeilBinarySearch {
     private Integer ceilBinarySearch(Integer[] array, Integer k, int leftIndex, int rightIndex){
         Integer result = null;
         if(leftIndex<=rightIndex){
+            
             int middle = (rightIndex+leftIndex)/2;
 
             if (array[leftIndex].compareTo(k)>=0) {
