@@ -12,32 +12,53 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return this.getData() == null;
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int size = 0;
+		if(!this.isEmpty()){
+			size = 1+ next.size();
+		}
+		return size;
 	}
 
 	@Override
 	public T search(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		T search = null;
+		if(element != null && !this.isEmpty()){
+			if(this.getData().equals(element)){
+				search = this.getData();
+			}else{
+				search = next.search(element);
+			}
+		}
+		return search;
 	}
 
 	@Override
 	public void insert(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if(element != null){
+			if(this.isEmpty()){
+				this.setData(element);
+				this.setNext(new RecursiveSingleLinkedListImpl<>());
+			}else{
+				next.insert(element);
+			}
+		}
 	}
 
 	@Override
 	public void remove(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if(element != null && !this.isEmpty()){
+			if(this.getData().equals(element)){
+				this.setData(this.getNext().getData());
+				this.setNext(this.next.getNext());
+			}else{
+				next.remove(element);
+			}
+		}
 	}
 
 	@Override
