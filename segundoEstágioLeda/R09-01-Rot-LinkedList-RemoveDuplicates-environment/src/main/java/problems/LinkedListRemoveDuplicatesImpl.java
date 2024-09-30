@@ -18,8 +18,19 @@ public class LinkedListRemoveDuplicatesImpl<T> implements LinkedListRemoveDuplic
      * transforma a lista em 3 -> 5 -> 1 -> 6 -> NIL
      */
     public void removeDuplicates(SingleLinkedListNode<T> node){
-        //TODO implement your code here
-        throw new UnsupportedOperationException("Not implemented yet!");    
+        SingleLinkedListNode<T> aux1 = node; 
+        while (!aux1.isNIL()) {
+            SingleLinkedListNode<T> aux2 = aux1.getNext();
+            while(!aux2.isNIL()){
+                if(aux2.getData().equals(aux1.getData())){
+                    aux2.setData(aux2.getNext().getData());
+                    aux2.setNext(aux2.getNext().getNext());;
+                }else{
+                    aux2 = aux2.getNext();
+                }
+            } 
+            aux1 = aux1.getNext();
+        }
     }
 }
 

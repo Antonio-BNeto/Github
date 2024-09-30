@@ -26,8 +26,17 @@ public class BatchLinkedListImpl<T> extends DoubleLinkedListImpl<T> implements B
 
 	@Override
 	public void inserirEmBatch(int posicao, T[] elementos) throws GenericException {
-		// TODO IMPLEMENTAR seguindo a documentação da interface e remover a linha abaixo
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int cont = 0;
+		DoubleLinkedListNode<T> auxNode = (DoubleLinkedListNode<T>)this.getHead();
+		while(!auxNode.isNIL()){
+			if(cont> posicao && cont <elementos.length){
+				for(T e : elementos){
+					DoubleLinkedListNode<T> aux = new DoubleLinkedListNode<T>(e, auxNode, auxNode.getPrevious());
+				}
+			}
+			cont ++;
+			auxNode = (DoubleLinkedListNode<T>)auxNode.getNext();
+		} 
 	}
 
 	@Override

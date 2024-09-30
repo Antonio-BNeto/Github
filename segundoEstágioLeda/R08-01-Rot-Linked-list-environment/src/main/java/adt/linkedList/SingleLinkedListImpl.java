@@ -42,7 +42,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public void insert(T element) {
 		if(element != null){
-			SingleLinkedListNode<T> aux = new SingleLinkedListNode<>();
+			SingleLinkedListNode<T> aux = this.getHead();
 			if(this.isEmpty()){
 				SingleLinkedListNode<T> newHead = new SingleLinkedListNode<T>(element, new SingleLinkedListNode<>());
 				this.setHead(newHead);

@@ -48,7 +48,7 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 				setData(element);
 				setNext(new RecursiveSingleLinkedListImpl<>());
 			}else{
-				next.insert(element);
+				next.insert(element);	
 			}
 		}
 	}
